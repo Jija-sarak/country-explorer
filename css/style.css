@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=VT323&display=swap');
+
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #242424;
+  color: #fff;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+}
+
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.hidden{
+  display: none;
+}
+
+/* Filters */
+.filters-container {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  background-color: #141414;
+  z-index: 1;
+}
+
+.search-box {
+  background-color: #141414;
+  width: 350px;
+  padding: 10px;
+}
+
+#search {
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 100%;
+  outline-style: none;
+}
+
+.dropdown {
+  position: fixed;
+  list-style: none;
+  background-color: #242424;
+  width: 330px;
+}
+
+.dropdown li {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.dropdown li:hover {
+  background-color: #141414;
+}
+
+.filter {
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+#region-filter,
+#language-filter {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: white;
+  min-width: 214px;
+  cursor: pointer;
+}
+
+.filter-icon {
+  display: none;
+}
+
+.filter.show-filters {
+  display: flex; /* Show filters when toggled */
+  margin: 10px;
+  top: 40px;
+  /* gap: 5px; */
+}
+
+
+/* Country cards & Favorites */
+.container {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+  padding-top: 60px;
+}
+
+.sub-container {
+  flex: 1;
+  position: relative;
+}
+
+.country-cards {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 60px 20px;
+  gap: 40px;
+}
+
+#show-btn {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+
+
+/* Country Card */
+.card {
+  width: 200px;
+  height: 250px;
+  text-align: center;
+  background-color: #c4eeff;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 60%;
+  border-radius: 5px 5px 0 0;
+}
+
+.card h3{
+  padding: 10px;
+}
+
+
+/* media queries */
+
+@media (max-width: 1024px) {
+  .country-cards {
+    padding: 40px 20px 40px 20px;
+  }
+}
+
+@media (max-width: 769px) {
+
+  .country-cards {
+    padding: 40px 20px 40px 20px;
+    gap: 30px;
+  }
+
+  .card{
+    width: 150px;
+    height: 200px;
+  }
+
+  h3{
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .filter {
+    display: none; /* Hide filters by default */
+    position: absolute;
+    flex-direction: column;
+    top: 50px;
+    right: 10px;
+    width: 40%;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    z-index: 3;
+  }
+  
+  #region-filter, #language-filter{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: white;
+    min-width: 152px;
+    margin: 3px;
+  }
+  .dropdown{
+    width: 295px;
+  }
+  .filter-icon {
+    margin: 15px;
+    padding: 5px 20px;
+    display: flex; /* Show filter icon on small screens */
+    align-items: center;
+    justify-content: center;
+    background-color: #d1e6f9;
+    border-radius: 5px;
+
+    & img{
+      width: 20px;
+    }
+
+    & p{
+      font-size: 14px;
+    }
+  }
+
+}
+
+@media (max-width: 426px) {
+  .filter {
+    display: none; /* Hide filters by default */
+    flex-direction: column;
+    position: absolute;
+    flex-direction: column;
+    top: 50px;
+    right: 10px;
+    width: 60%;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    z-index: 10;
+  }
+  #region-filter, #language-filter{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: white;
+    min-width: 152px;
+    margin: 3px;
+  }
+
+  .filter-icon {
+    margin: 10px;
+    padding: 5px 10px;
+    display: flex; /* Show filter icon on small screens */
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(209, 230, 249);
+    border-radius: 5px;
+
+    & img{
+      width: 20px;
+    }
+
+    & p{
+      font-size: 14px;
+    }
+  }
+
+ .card {
+    width: 100px;
+    height: 150px;
+    margin: 10px 0; /* Add consistent spacing */
+  }
+
+  h3{
+    font-size: 12px;
+  }
+}

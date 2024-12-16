@@ -1,0 +1,43 @@
+.favorites {
+  height: 100%;
+  width: 300px;
+  background-color: #1b1b1b;
+  position: fixed;
+  right: 0;
+  padding: 10px;
+  text-align: center;
+  overflow-y: auto;
+}
+
+#favorites-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .favorites {
+    width: 250px;
+  }
+}
+
+@media (max-width: 786px) {
+  .favorites {
+    width: 200px;
+  }
+
+}
+
+@media (max-width: 426px) {
+  .favorites {
+    width: 150px;
+  }
+
+}
+
+
