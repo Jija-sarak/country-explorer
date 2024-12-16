@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Explorer</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/details.css">
+  <link rel="stylesheet" href="./css/favorites.css">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+  <div class="main">
+    <div class="filters-container">
+      <div class="search-box">
+        <input
+          type="text"
+          id="search"
+          placeholder="Search countries..."
+          autocomplete="off"
+        />
+        <ul id="search-suggestions" class="dropdown"></ul>
+      </div>
+      <div class="filter">
+        <select id="region-filter">
+          <option value="">Filter by Region</option>
+        </select>
+        <select id="language-filter">
+          <option value="">Filter by Language</option>
+        </select>
+      </div>
+      <div class="filter-icon" id="toggle-filters">
+        <img src="./images/filter-icon.png" alt="filter icon" style="width: 20px;"/>
+        <span>Filters</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="sub-container">
+        <div class="country-cards"></div>
+        <div class="btn" id="show-btn">
+          <button id="show-more">Show More</button>
+        </div>
+      </div>
+      <div class="favorites">
+        <h2>Favorites</h2>
+        <div id="favorites-list">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="country-details"></div>
+  <script src="./js/app.js"></script>
+</body>
+</html>
