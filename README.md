@@ -76,7 +76,6 @@ Optimized for:
 ## 🔧 Future Enhancements
 
 - Add dark/light theme.
-- Implement search history.
 - Lazy load images for better performance.
 
 ---
